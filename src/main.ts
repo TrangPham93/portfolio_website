@@ -1,12 +1,5 @@
-// interface toDo {
-// 	text: string;
-// 	done: boolean;
-// }
+import { setUpMenu } from "./menu";
 
-function greet(name: string): string {
-	return `Hello, ${name}!`;
-}
-const title = document.getElementById("title");
-if (title) {
-	title.textContent = greet("visitor");
-}
+document.addEventListener("DOMContentLoaded", () => {
+  setUpMenu();
+});

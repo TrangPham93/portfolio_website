@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["src", "src/about.ts", "src/blog.ts", "src/menu.ts", "src/projects.ts"],
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout

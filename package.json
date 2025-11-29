@@ -4,7 +4,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "node build/hello.js",
+    "start": "http-server -p 0",
     "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }
