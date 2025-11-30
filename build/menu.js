@@ -7,11 +7,11 @@ function setUpMenu() {
     if (sections.length === 0)
         return;
     function showSectionById(id) {
+        console.log("Target ID:", id);
         sections.forEach((sec) => {
-            sec.classList.toggle("hidden", sec.id !== id);
-        });
-        links.forEach((a) => {
-            a.classList.toggle("active", a.getAttribute("href") === `#${id}`);
+            const shouldHide = sec.id !== id;
+            sec.classList.toggle("hidden", shouldHide);
+            console.log(sec.id, "shouldHide:", shouldHide, "has hidden:", sec.classList.contains("hidden"));
         });
     }
     links.forEach((a) => {
@@ -27,5 +27,7 @@ function setUpMenu() {
     });
     const initialId = (location.hash && location.hash.substring(1)) ||
         (sections.length > 0 && sections[0] ? sections[0].id : "");
-    showSectionById(initialId);
+    if (initialId) {
+        showSectionById(initialId);
+    }
 }

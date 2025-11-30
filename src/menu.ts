@@ -10,14 +10,14 @@ export function setUpMenu(): void {
   if (sections.length === 0) return;
 
   function showSectionById(id: string) {
-    sections.forEach((sec) => {
-      sec.classList.toggle("hidden", sec.id !== id);
-    });
+  console.log("Target ID:", id);
+  sections.forEach((sec) => {
+    const shouldHide = sec.id !== id;
+    sec.classList.toggle("hidden", shouldHide);
+    console.log(sec.id, "shouldHide:", shouldHide, "has hidden:", sec.classList.contains("hidden"));
+  });
+	}
 
-    links.forEach((a) => {
-      a.classList.toggle("active", a.getAttribute("href") === `#${id}`);
-    });
-  }
 
   links.forEach((a) => {
     a.addEventListener("click", (ev) => {
@@ -32,9 +32,12 @@ export function setUpMenu(): void {
     });
   });
 
-  const initialId =
-    (location.hash && location.hash.substring(1)) ||
-    (sections.length > 0 && sections[0] ? sections[0].id : "");
+ const initialId =
+  (location.hash && location.hash.substring(1)) ||
+  (sections.length > 0 && sections[0] ? sections[0].id : "");
 
+if (initialId) {
   showSectionById(initialId);
+}
+
 }
