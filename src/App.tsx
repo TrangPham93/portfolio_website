@@ -4,6 +4,7 @@ import Header from './components/Header'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Blog from './pages/Blog'
+import Footer from './components/Footer'
 
 
 export default function App() {
@@ -11,12 +12,15 @@ export default function App() {
     <BrowserRouter>
       <Header />
 
-      <Routes>
-        <Route path='/' element={<About/>} />
-        <Route path='/projects' element={<Projects/>} />
-        <Route path='/blog' element={<Blog/>} />
-      </Routes>
-    </BrowserRouter>
+      <div className='content'>
+        <Routes>
+          <Route path='/' element={<About/>} />
+          <Route path='/projects' element={<Projects/>} />
+          <Route path='/blog' element={<Blog/>} />
+        </Routes>
+      </div>
 
+      <Footer />
+    </BrowserRouter>
   )
 }
