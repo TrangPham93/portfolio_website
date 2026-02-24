@@ -59,6 +59,22 @@ header {
   transition: 0.2s;
 }
 
+.cv-button {
+  display: inline-block;
+  padding: 5px 6px;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
 /* respnsive */
 @media (max-width: 600px) {
   .nav-container {
@@ -104,4 +120,20 @@ body.dark-mode .nav-links a.active {
 
 body.dark-mode .nav-links a:hover {
   background: #5a5656;
+}
+
+body.dark-mode .cv-button {
+  display: inline-block;
+  padding: 5px 6px;
+  background-color: #5a5656;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
 }
